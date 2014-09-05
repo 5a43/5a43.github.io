@@ -41,17 +41,19 @@
 <li>不想用基于Ruby的Jekyll</li>
 </ul>
 <h1>简单的步骤</h1>
-<p>1.安装
-    sudo pip install pelican, markdown
-2.设置
+<ol>
+<li>安装
+    sudo pip install pelican, markdown</li>
+<li>设置
     <em>按照<a href="http://docs.getpelican.com/en/3.4.0/index.html" title="pelican">pelican</a>文档里面写的quick start步骤，先生成一个站点
-    </em>修改pelicanconf.py和publishconf.py，如果github的目录设置到output了，别忘了一定把DELETE_OUTPUT_DIRECTORY注释掉或者设置为False，否则.git在每次生成的时候都被删掉。各种设置可以参考<a href="http://docs.getpelican.com/en/latest/settings.html" title="pelican setting">这里</a>
-3.参考<a href="http://docs.getpelican.com/en/3.4.0/index.html" title="pelican">pelican</a>了解怎么组织content目录中得metadata数据
-4.生成
-    make html
-5.发布
-    make publish
-6.最后别忘了commit和git push到github去</p>
+    </em>修改pelicanconf.py和publishconf.py，如果github的目录设置到output了，别忘了一定把DELETE_OUTPUT_DIRECTORY注释掉或者设置为False，否则.git在每次生成的时候都被删掉。各种设置可以参考<a href="http://docs.getpelican.com/en/latest/settings.html" title="pelican setting">这里</a></li>
+<li>参考<a href="http://docs.getpelican.com/en/3.4.0/index.html" title="pelican">pelican</a>了解怎么组织content目录中得metadata数据</li>
+<li>生成
+    make html</li>
+<li>发布
+    make publish</li>
+<li>最后别忘了commit和git push到github去</li>
+</ol>
       </article>
 
       <hr />
