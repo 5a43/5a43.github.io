@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>5a43's Blog</title><link href="http://5a43.github.io/" rel="alternate"></link><link href="http://5a43.github.io/feeds/5a43.atom.xml" rel="self"></link><id>http://5a43.github.io/</id><updated>2014-09-05T00:00:00+08:00</updated><entry><title>用Pelican生成的第一篇Blog</title><link href="http://5a43.github.io/yong-pelicansheng-cheng-de-di-yi-pian-blog.html" rel="alternate"></link><updated>2014-09-05T00:00:00+08:00</updated><author><name>5a43</name></author><id>tag:5a43.github.io,2014-09-05:yong-pelicansheng-cheng-de-di-yi-pian-blog.html</id><summary type="html">&lt;h1&gt;为什么使用Pelican生成blog站点&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;使用Github Pages服务托管站点&lt;/li&gt;
+&lt;li&gt;不想用Ruby&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;相关文档可以从&lt;a href="http://docs.getpelican.com/en/3.4.0/index.html" title="pelican"&gt;pelican&lt;/a&gt;获取&lt;/p&gt;</summary><category term="pelican"></category><category term="GitHub Pages"></category></entry></feed>

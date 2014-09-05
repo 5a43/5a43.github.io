@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>5a43's Blog</title><link>http://5a43.github.io/</link><description></description><atom:link href="http://5a43.github.io/feeds/5a43.rss.xml" rel="self"></atom:link><lastBuildDate>Fri, 05 Sep 2014 00:00:00 +0800</lastBuildDate><item><title>用Pelican生成的第一篇Blog</title><link>http://5a43.github.io/yong-pelicansheng-cheng-de-di-yi-pian-blog.html</link><description>&lt;h1&gt;为什么使用Pelican生成blog站点&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;使用Github Pages服务托管站点&lt;/li&gt;
+&lt;li&gt;不想用Ruby&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;相关文档可以从&lt;a href="http://docs.getpelican.com/en/3.4.0/index.html" title="pelican"&gt;pelican&lt;/a&gt;获取&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">5a43</dc:creator><pubDate>Fri, 05 Sep 2014 00:00:00 +0800</pubDate><guid>tag:5a43.github.io,2014-09-05:yong-pelicansheng-cheng-de-di-yi-pian-blog.html</guid><category>pelican</category><category>GitHub Pages</category></item></channel></rss>
