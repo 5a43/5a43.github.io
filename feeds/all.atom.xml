@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>5a43's Blog</title><link href="http://5a43.github.io/" rel="alternate"></link><link href="http://5a43.github.io/feeds/all.atom.xml" rel="self"></link><id>http://5a43.github.io/</id><updated>2014-09-05T00:00:00+08:00</updated><entry><title>用Pelican生成的第一篇Blog</title><link href="http://5a43.github.io/yong-pelicansheng-cheng-de-di-yi-pian-blog.html" rel="alternate"></link><updated>2014-09-05T00:00:00+08:00</updated><author><name>5a43</name></author><id>tag:5a43.github.io,2014-09-05:yong-pelicansheng-cheng-de-di-yi-pian-blog.html</id><summary type="html">&lt;h1&gt;为什么使用Pelican生成blog站点&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>5a43's Blog</title><link href="http://5a43.github.io/" rel="alternate"></link><link href="http://5a43.github.io/feeds/all.atom.xml" rel="self"></link><id>http://5a43.github.io/</id><updated>2014-09-05T00:00:00+08:00</updated><entry><title>MAC下用Pelican生成Github Pages可用站点</title><link href="http://5a43.github.io/macxia-yong-pelicansheng-cheng-github-pageske-yong-zhan-dian.html" rel="alternate"></link><updated>2014-09-05T00:00:00+08:00</updated><author><name>5a43</name></author><id>tag:5a43.github.io,2014-09-05:macxia-yong-pelicansheng-cheng-github-pageske-yong-zhan-dian.html</id><summary type="html">&lt;h1&gt;为什么使用Pelican&lt;/h1&gt;
 &lt;ul&gt;
-&lt;li&gt;使用Github Pages服务托管站点&lt;/li&gt;
-&lt;li&gt;不想用Ruby&lt;/li&gt;
+&lt;li&gt;使用Github Pages服务托管要求是静态站点&lt;/li&gt;
+&lt;li&gt;不想用基于Ruby的Jekyll&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;相关文档可以从&lt;a href="http://docs.getpelican.com/en/3.4.0/index.html" title="pelican"&gt;pelican&lt;/a&gt;获取&lt;/p&gt;</summary><category term="pelican"></category><category term="GitHub Pages"></category></entry></feed>
+&lt;h1&gt;简单的步骤&lt;/h1&gt;
+&lt;p&gt;1.安装
+    sudo pip install pelican, markdown
+2.设置
+    &lt;em&gt;按照&lt;a href="http://docs.getpelican.com/en/3.4.0/index.html" title="pelican"&gt;pelican&lt;/a&gt;文档里面写的quick start步骤，先生成一个站点
+    &lt;/em&gt;修改pelicanconf.py和publishconf.py，如果github的目录设置到output了，别忘了一定把DELETE_OUTPUT_DIRECTORY注释掉或者设置为False，否则.git在每次生成的时候都被删掉。各种设置可以参考&lt;a href="http://docs.getpelican.com/en/latest/settings.html" title="pelican setting"&gt;这里&lt;/a&gt;
+3.参考&lt;a href="http://docs.getpelican.com/en/3.4.0/index.html" title="pelican"&gt;pelican&lt;/a&gt;了解怎么组织content目录中得metadata数据
+4.生成
+    make html
+5.发布
+    make publish
+6.最后别忘了commit和git push到github去&lt;/p&gt;</summary><category term="pelican"></category><category term="GitHub Pages"></category></entry></feed>
