@@ -10,13 +10,9 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;2.设置&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;按照&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;pelican&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="err"&gt;文档里面写的&lt;/span&gt;&lt;span class="n"&gt;quick&lt;/span&gt; &lt;span class="n"&gt;start&lt;/span&gt;&lt;span class="err"&gt;步骤，先生成一个站点。然后修改&lt;/span&gt;&lt;span class="n"&gt;pelicanconf&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;&lt;span class="err"&gt;和&lt;/span&gt;&lt;span class="n"&gt;publishconf&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;&lt;span class="err"&gt;，如果&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="err"&gt;的目录设置到&lt;/span&gt;&lt;span class="n"&gt;output&lt;/span&gt;&lt;span class="err"&gt;了，别忘了一定把&lt;/span&gt;&lt;span class="n"&gt;DELETE&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="n"&gt;_OUTPUT&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="n"&gt;_DIRECTORY&lt;/span&gt;&lt;span class="err"&gt;注释掉或者设置为&lt;/span&gt;&lt;span class="n"&gt;False&lt;/span&gt;&lt;span class="err"&gt;，否则&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="err"&gt;在每次生成的时候都被删掉。各种设置可以参考&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="err"&gt;这里&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;3.参考&lt;a href="http://docs.getpelican.com/en/3.4.0/index.html" title="pelican"&gt;pelican&lt;/a&gt;了解怎么组织content目录中得metadata数据
-4.生成&lt;/p&gt;
+&lt;p&gt;2.设置可以按照&lt;a href="http://docs.getpelican.com/en/3.4.0/index.html" title="pelican"&gt;pelican&lt;/a&gt;文档里面写的quick start步骤，先生成一个站点。然后修改pelicanconf.py和publishconf.py，如果github的目录设置到output了，别忘了一定把DELETE_OUTPUT_DIRECTORY设置为False，否则.git在每次生成的时候都被删掉。各种设置可以参考&lt;a href="http://docs.getpelican.com/en/latest/settings.html" title="pelican setting"&gt;这里&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;3.参考&lt;a href="http://docs.getpelican.com/en/3.4.0/index.html" title="pelican"&gt;pelican&lt;/a&gt;了解怎么组织content目录中得metadata数据&lt;/p&gt;
+&lt;p&gt;4.生成&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;make&lt;/span&gt; &lt;span class="n"&gt;html&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -26,4 +22,9 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;6.最后别忘了commit和git push到github去&lt;/p&gt;</summary><category term="pelican"></category><category term="GitHub Pages"></category></entry></feed>
+&lt;p&gt;6.以后如果想全自动发布到github pages的话，可以修改一下Makefile的github publish部分，如下：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;OUTPUTDIR&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;add&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;commit&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;commit&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;push&lt;/span&gt; &lt;span class="n"&gt;origin&lt;/span&gt; &lt;span class="n"&gt;master&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;修改完成后以后每次就可以直接用&lt;code&gt;make github&lt;/code&gt;生成发布的站点并push到github了。&lt;/p&gt;</summary><category term="pelican"></category><category term="GitHub Pages"></category></entry></feed>
