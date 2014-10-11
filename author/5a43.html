@@ -35,6 +35,26 @@
 
 <article class="summary">
 <div class="metadata">
+  <time datetime="2014-10-11T00:00:00" pubdate>六 11 十月 2014</time>
+    <address class="vcard author">
+      by <a class="url fn" href="http://5a43.github.io/author/5a43.html">5a43</a>
+    </address>
+  in <a href="http://5a43.github.io/category/scanner.html">Scanner</a>
+<p class="tags">tagged <a href="http://5a43.github.io/tag/dns.html">DNS</a>, <a href="http://5a43.github.io/tag/secure.html">Secure</a>, <a href="http://5a43.github.io/tag/dynamic-update.html">Dynamic Update</a>, <a href="http://5a43.github.io/tag/scan.html">Scan</a></p></div>  <div>
+    <h2>
+      <a href="http://5a43.github.io/sao-miao-dns-dong-tai-geng-xin.html" rel="bookmark" title="Permalink to 扫描 DNS 动态更新">扫描 DNS 动态更新</a>
+    </h2>
+    <p><p>由于一个客户的case，看了一下DNS动态更新。DNS Server可以支持记录的动态更新，比如Windows 2008 R2域服务器默认DNS Server都是给DNS动态更新配置为Secure Only模式。扫描的话可以先发一个Update的包给服务器，先添加一个记录，数据包里面域名弄的复杂一些以防搞乱服务器上原有的域名，记录类型就随便设置成A记录或者TXT都可以，然后把CLASS的值设置成1也就是IN。这样从服务器的返回数据中得RCODE就可以看出是否启用了动态更新，返回值对应如下：</p>
+<div class="highlight"><pre><span class="mi">0</span> <span class="o">=</span> <span class="err">成功更新</span>
+<span class="mi">4</span> <span class="o">=</span> <span class="err">没实现，也就是不支持动态更新</span>
+<span class="mi">5</span> <span class="o">=</span> <span class="err">需要认证，也就是配置成</span><span class="n">Secure</span> <span class="n">Only</span>
+</pre></div>
+
+
+<p>随后，我们再发送一个类似的Update包，给CLASS设置成0xFF，Data设置成空就可以，发过去以后把刚才创建的域名删除掉即可。具体的协议可以参考 <a href="http://tools.ietf.org/html/rfc1035" title="RFC 1035">RFC 1035</a> 和 <a href="http://tools.ietf.org/html/rfc2136" title="RFC 2136">RFC 2136</a>。</p></p>
+  </div>
+</article><article class="summary">
+<div class="metadata">
   <time datetime="2014-09-22T00:00:00" pubdate>一 22 九月 2014</time>
     <address class="vcard author">
       by <a class="url fn" href="http://5a43.github.io/author/5a43.html">5a43</a>
@@ -72,6 +92,7 @@
 	          <h2>Categories</h2>
 	          <ul>
 	              <li ><a href="http://5a43.github.io/category/misc.html">Misc</a></li>
+	              <li ><a href="http://5a43.github.io/category/scanner.html">Scanner</a></li>
 	              <li ><a href="http://5a43.github.io/category/tools.html">Tools</a></li>
 	          </ul>
 	        </nav>

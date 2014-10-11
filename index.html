@@ -34,8 +34,15 @@
 
 
       <article>
-        <h1><a href="http://5a43.github.io/truecryptde-ti-dai-pin-ciphershed.html">TrueCrypt的替代品CipherShed</a></h1>
-        <p>自从上次TrueCrypt发表官方声明说他的代码已经不再安全，我就开始直接使用OS X自带的加密映像功能了。但是唯一不方便的就是没法跨平台，万一以后又换回Windows的话很不方便，虽然这种几率很小，但是有一个能跨平台的软件还是要方便的多。估计有这种想法的人还不在少数，于是今天就看到有人Fork了TrueCrypt的代码，新弄了一个开源项目 <a href="https://ciphershed.org" title="CipherShed">CipherShed</a>。项目由于基于TrueCrypt，所以依旧支多平台，界面也和TrueCrypt没啥区别。不过要注意的就是开源并不代表代码安全，又有几个人会去仔细看看他的代码呢？</p>
+        <h1><a href="http://5a43.github.io/sao-miao-dns-dong-tai-geng-xin.html">扫描 DNS 动态更新</a></h1>
+        <p>由于一个客户的case，看了一下DNS动态更新。DNS Server可以支持记录的动态更新，比如Windows 2008 R2域服务器默认DNS Server都是给DNS动态更新配置为Secure Only模式。扫描的话可以先发一个Update的包给服务器，先添加一个记录，数据包里面域名弄的复杂一些以防搞乱服务器上原有的域名，记录类型就随便设置成A记录或者TXT都可以，然后把CLASS的值设置成1也就是IN。这样从服务器的返回数据中得RCODE就可以看出是否启用了动态更新，返回值对应如下：</p>
+<div class="highlight"><pre><span class="mi">0</span> <span class="o">=</span> <span class="err">成功更新</span>
+<span class="mi">4</span> <span class="o">=</span> <span class="err">没实现，也就是不支持动态更新</span>
+<span class="mi">5</span> <span class="o">=</span> <span class="err">需要认证，也就是配置成</span><span class="n">Secure</span> <span class="n">Only</span>
+</pre></div>
+
+
+<p>随后，我们再发送一个类似的Update包，给CLASS设置成0xFF，Data设置成空就可以，发过去以后把刚才创建的域名删除掉即可。具体的协议可以参考 <a href="http://tools.ietf.org/html/rfc1035" title="RFC 1035">RFC 1035</a> 和 <a href="http://tools.ietf.org/html/rfc2136" title="RFC 2136">RFC 2136</a>。</p>
       </article>
 
       <hr />
@@ -44,6 +51,12 @@
           <h3>Last posts</h3>
           <ol class="archive">
     
+
+
+      <li>
+<a href="http://5a43.github.io/truecryptde-ti-dai-pin-ciphershed.html" rel="bookmark" title="Permalink to TrueCrypt的替代品CipherShed">TrueCrypt的替代品CipherShed</a>
+  <time datetime="2014-09-22T00:00:00" pubdate>一 22 九月 2014</time>
+<p class="tags">tags: <a href="http://5a43.github.io/tag/truecrypt.html">TrueCrypt</a><a href="http://5a43.github.io/tag/tools.html">Tools</a><a href="http://5a43.github.io/tag/ciphershed.html">CipherShed</a></p></a>      </li>
 
 
       <li>
@@ -63,6 +76,7 @@
 	          <h2>Categories</h2>
 	          <ul>
 	              <li ><a href="http://5a43.github.io/category/misc.html">Misc</a></li>
+	              <li ><a href="http://5a43.github.io/category/scanner.html">Scanner</a></li>
 	              <li ><a href="http://5a43.github.io/category/tools.html">Tools</a></li>
 	          </ul>
 	        </nav>
