@@ -1,5 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>5a43's Blog</title><link>http://5a43.github.io/</link><description></description><atom:link href="http://5a43.github.io/feeds/5a43.rss.xml" rel="self"></atom:link><lastBuildDate>Sat, 11 Oct 2014 00:00:00 +0800</lastBuildDate><item><title>扫描 DNS 动态更新</title><link>http://5a43.github.io/sao-miao-dns-dong-tai-geng-xin.html</link><description>&lt;p&gt;由于一个客户的case，看了一下DNS动态更新。DNS Server可以支持记录的动态更新，比如Windows 2008 R2域服务器默认DNS Server都是给DNS动态更新配置为Secure Only模式。扫描的话可以先发一个Update的包给服务器，先添加一个记录，数据包里面域名弄的复杂一些以防搞乱服务器上原有的域名，记录类型就随便设置成A记录或者TXT都可以，然后把CLASS的值设置成1也就是IN。这样从服务器的返回数据中得RCODE就可以看出是否启用了动态更新，返回值对应如下：&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>5a43's Blog</title><link>http://5a43.github.io/</link><description></description><atom:link href="http://5a43.github.io/feeds/5a43.rss.xml" rel="self"></atom:link><lastBuildDate>Sat, 18 Oct 2014 00:00:00 +0800</lastBuildDate><item><title>PyCharm 不能在 OS X Yosemite 运行问题解决办法</title><link>http://5a43.github.io/pycharm-bu-neng-zai-os-x-yosemite-yun-xing-wen-ti-jie-jue-ban-fa.html</link><description>&lt;p&gt;苹果正式发布了OS X 10.10 Yosemite以后，迫不及待的升级了。升级完成后绝大多数程序都可以运行，不过PyCharm运行不了，想必是没有安装java的缘故。于是打开iTerm输入&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;java&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;version&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;提示说让直接去Oracle下载。从java.com下载了Java JDK 8以后安装，再运行PyCharm还是发现无法运行，竟然告诉我需要Java SE 6，这也太土了一些吧。经过请教Google找到解决办法。首先打开以下文件&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;vi&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Applications&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;PyCharm&lt;/span&gt; &lt;span class="n"&gt;CE&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Contents&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Info&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plist&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;注意我用的是社区免费版，壕们如果用的是收费版，路径略有不同。&lt;/p&gt;
+&lt;p&gt;找到以下字串&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;1.6*&lt;span class="nt"&gt;&amp;lt;/string&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;替换成下面的字符串&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;1.6+&lt;span class="nt"&gt;&amp;lt;/string&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;ESC :wq后，再启动PyCharm就能看到他正常运行了。&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">5a43</dc:creator><pubDate>Sat, 18 Oct 2014 00:00:00 +0800</pubDate><guid>tag:5a43.github.io,2014-10-18:pycharm-bu-neng-zai-os-x-yosemite-yun-xing-wen-ti-jie-jue-ban-fa.html</guid><category>PyCharm</category><category>OS X</category><category>Yosemite</category></item><item><title>扫描 DNS 动态更新</title><link>http://5a43.github.io/sao-miao-dns-dong-tai-geng-xin.html</link><description>&lt;p&gt;由于一个客户的case，看了一下DNS动态更新。DNS Server可以支持记录的动态更新，比如Windows 2008 R2域服务器默认DNS Server都是给DNS动态更新配置为Secure Only模式。扫描的话可以先发一个Update的包给服务器，先添加一个记录，数据包里面域名弄的复杂一些以防搞乱服务器上原有的域名，记录类型就随便设置成A记录或者TXT都可以，然后把CLASS的值设置成1也就是IN。这样从服务器的返回数据中得RCODE就可以看出是否启用了动态更新，返回值对应如下：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;成功更新&lt;/span&gt;
 &lt;span class="mi"&gt;4&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;没实现，也就是不支持动态更新&lt;/span&gt;
 &lt;span class="mi"&gt;5&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;需要认证，也就是配置成&lt;/span&gt;&lt;span class="n"&gt;Secure&lt;/span&gt; &lt;span class="n"&gt;Only&lt;/span&gt;
