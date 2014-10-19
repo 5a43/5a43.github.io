@@ -35,6 +35,30 @@
 
 <article class="summary">
 <div class="metadata">
+  <time datetime="2014-10-19T00:00:00" pubdate>日 19 十月 2014</time>
+    <address class="vcard author">
+      by <a class="url fn" href="http://5a43.github.io/author/5a43.html">5a43</a>
+    </address>
+  in <a href="http://5a43.github.io/category/mac.html">Mac</a>
+<p class="tags">tagged <a href="http://5a43.github.io/tag/pelican.html">Pelican</a>, <a href="http://5a43.github.io/tag/os-x.html">OS X</a>, <a href="http://5a43.github.io/tag/yosemite.html">Yosemite</a></p></div>  <div>
+    <h2>
+      <a href="http://5a43.github.io/sheng-ji-os-x-yosemite-hou-pelican-wu-fa-yun-xing-de-jie-jue-ban-fa.html" rel="bookmark" title="Permalink to 升级 OS X Yosemite 后 Pelican 无法运行的解决办法">升级 OS X Yosemite 后 Pelican 无法运行的解决办法</a>
+    </h2>
+    <p><p>升级完Yosemite以后，想写个Blog，结果写法用Pelican生成页面的时候，竟然提示无法找到six.moves.html_parser模块。pip list看了一下，six模块是存在的，于是卸载了重新装了一下</p>
+<div class="highlight"><pre><span class="n">sudo</span> <span class="n">pip</span> <span class="n">uninstall</span> <span class="n">six</span>
+<span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">six</span>
+</pre></div>
+
+
+<p>然后运行make html还是提示同样的错误，用pip list看six的版本已经升级到1.8.0了。但是进入Python的控制台，import six以后，看到six.__version__还是1.4.1。而且dir(six.moves)发现什么模块都没有。于是想是不是系统还有个six库。直接在控制台里面输入six显示出当前库的路径是</p>
+<div class="highlight"><pre><span class="o">/</span><span class="n">System</span><span class="o">/</span><span class="n">Library</span><span class="o">/</span><span class="n">Frameworks</span><span class="o">/</span><span class="n">Python</span><span class="p">.</span><span class="n">framework</span><span class="o">/</span><span class="n">Versions</span><span class="o">/</span><span class="mf">2.7</span><span class="o">/</span><span class="n">Extras</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python</span>
+</pre></div>
+
+
+<p>转到这个路径，把six有关的文件删除掉 ...</p></p>
+  </div>
+</article><article class="summary">
+<div class="metadata">
   <time datetime="2014-09-05T00:00:00" pubdate>五 05 九月 2014</time>
     <address class="vcard author">
       by <a class="url fn" href="http://5a43.github.io/author/5a43.html">5a43</a>
