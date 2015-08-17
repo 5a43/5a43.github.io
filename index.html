@@ -34,46 +34,16 @@
 
 
       <article>
-        <h1><a href="http://5a43.github.io/kalizhong-an-zhuang-vmware-tools.html">Kali中安装VMware Tools</a></h1>
-        <p>首先编辑一下源的配置文件</p>
-<div class="highlight"><pre><span class="n">vim</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">apt</span><span class="o">/</span><span class="n">sources</span><span class="p">.</span><span class="n">list</span>
+        <h1><a href="http://5a43.github.io/ssh-client-ren-zheng-hou-qia-si-de-wen-ti.html">SSH Client 认证后卡死的问题</a></h1>
+        <p>最近刚刚换了一台Netgear WNDR4300的路由器，以前的DIR-617退役了。但是换完后发现一个问题。每当在我的Mac里面用SSH登陆我内网的香蕉派时，总是在输入完密码后无法登陆，一直卡死在那里。于是加-vvv看来一下详细的输出，最后几行大概是如下内容：</p>
+<div class="highlight"><pre><span class="n">debug3</span><span class="o">:</span> <span class="n">Ignored</span> <span class="n">env</span> <span class="n">_</span>
+<span class="n">debug2</span><span class="o">:</span> <span class="n">channel</span> <span class="mi">0</span><span class="o">:</span> <span class="n">request</span> <span class="n">shell</span> <span class="n">confirm</span> <span class="mi">1</span>
+<span class="n">debug2</span><span class="o">:</span> <span class="n">callback</span> <span class="n">done</span>
+<span class="n">debug2</span><span class="o">:</span> <span class="n">channel</span> <span class="mi">0</span><span class="o">:</span> <span class="n">open</span> <span class="n">confirm</span> <span class="n">rwindow</span> <span class="mi">0</span> <span class="n">rmax</span> <span class="mi">32768</span>
 </pre></div>
 
 
-<p>默认的源应该就可以，如果没有可以用下面的</p>
-<div class="highlight"><pre><span class="c">#官方源</span>
-<span class="k">deb</span> <span class="s">http://http.kali.org/kali</span> <span class="kp">kali</span> <span class="kp">main</span> <span class="kp">non-free</span> <span class="kp">contrib</span>
-<span class="k">deb-src</span> <span class="s">http://http.kali.org/kali</span> <span class="kp">kali</span> <span class="kp">main</span> <span class="kp">non-free</span> <span class="kp">contrib</span>
-<span class="k">deb</span> <span class="s">http://security.kali.org/kali-security</span> <span class="kp">kali/updates</span> <span class="kp">main</span> <span class="kp">contrib</span> <span class="kp">non-free</span>
-
-<span class="c">#中科大kali源</span>
-<span class="k">deb</span> <span class="s">http://mirrors.ustc.edu.cn/kali</span> <span class="kp">kali</span> <span class="kp">main</span> <span class="kp">non-free</span> <span class="kp">contrib</span>
-<span class="k">deb-src</span> <span class="s">http://mirrors.ustc.edu.cn/kali</span> <span class="kp">kali</span> <span class="kp">main</span> <span class="kp">non-free</span> <span class="kp">contrib</span>
-<span class="k">deb</span> <span class="s">http://mirrors.ustc.edu.cn/kali-security</span> <span class="kp">kali/updates</span> <span class="kp">main</span> <span class="kp">contrib</span> <span class="kp">non-free</span>
-
-<span class="c">#阿里云kali源</span>
-<span class="k">deb</span> <span class="s">http://mirrors.aliyun.com/kali</span> <span class="kp">kali</span> <span class="kp">main</span> <span class="kp">non-free</span> <span class="kp">contrib</span>
-<span class="k">deb-src</span> <span class="s">http://mirrors.aliyun.com/kali</span> <span class="kp">kali</span> <span class="kp">main</span> <span class="kp">non-free</span> <span class="kp">contrib</span>
-<span class="k">deb</span> <span class="s">http://mirrors.aliyun.com/kali-security</span> <span class="kp">kali/updates</span> <span class="kp">main</span> <span class="kp">contrib</span> <span class="kp">non-free</span>
-</pre></div>
-
-
-<p>配置好源后，运行</p>
-<div class="highlight"><pre><span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
-</pre></div>
-
-
-<p>安装linux内核头文件，同时把gcc make什么的一起装了</p>
-<div class="highlight"><pre><span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">gcc</span> <span class="n">make</span> <span class="n">linux</span><span class="o">-</span><span class="n">headers</span><span class="o">-</span><span class="err">$</span><span class="p">(</span><span class="n">uname</span> <span class="o">-</span><span class="n">r</span><span class="p">)</span>
-</pre></div>
-
-
-<p>安装完成后，做一个链接</p>
-<div class="highlight"><pre><span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">linux</span><span class="o">-</span><span class="n">headers</span><span class="o">-</span><span class="err">$</span><span class="p">(</span><span class="n">uname</span> <span class="o">-</span><span class="n">r</span><span class="p">)</span><span class="o">/</span><span class="n">include</span><span class="o">/</span><span class="n">generated</span><span class="o">/</span><span class="n">uapi</span><span class="o">/</span><span class="n">linux</span><span class="o">/</span><span class="n">version</span><span class="p">.</span><span class="n">h</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">linux</span><span class="o">-</span><span class="n">headers</span><span class="o">-</span><span class="err">$</span><span class="p">(</span><span class="n">uname</span> <span class="o">-</span><span class="n">r</span><span class="p">)</span><span class="o">/</span><span class="n">include</span><span class="o">/</span><span class="n">linux</span><span class="o">/</span>
-</pre></div>
-
-
-<p>完成以上步骤后直接解压缩VMware Tools那个tar.gz的包，运行里面的vmware-tools-install.pl就可以了，一路回车安装完毕。</p>
+<p>Google了一番后无果，基本上都是老外在讨论，没有什么国内的人讨论这个问题，但是老外们最终也没什么个好的解决办法。一番折腾后，最终发现了问题所在，每当我登陆不了的时候，都是由于我开着Windows的虚拟机呢，并且我的VMware虚拟机选用的是桥接方式连接。解决方法也很简单，直接把虚拟机的网卡改成NAT方式就可以了。由于之前DIR-617没有这样的问题，估计是路由器的缘故，改天有时间刷DD-WRT再试验一下。</p>
       </article>
 
       <hr />
@@ -82,6 +52,12 @@
           <h3>Last posts</h3>
           <ol class="archive">
     
+
+
+      <li>
+<a href="http://5a43.github.io/kalizhong-an-zhuang-vmware-tools.html" rel="bookmark" title="Permalink to Kali中安装VMware Tools">Kali中安装VMware Tools</a>
+  <time datetime="2014-11-11T00:00:00" pubdate>二 11 十一月 2014</time>
+<p class="tags">tags: <a href="http://5a43.github.io/tag/kali.html">Kali</a><a href="http://5a43.github.io/tag/vmware-tools.html">Vmware Tools</a></p></a>      </li>
 
 
       <li>
@@ -108,10 +84,6 @@
 <p class="tags">tags: <a href="http://5a43.github.io/tag/truecrypt.html">TrueCrypt</a><a href="http://5a43.github.io/tag/tools.html">Tools</a><a href="http://5a43.github.io/tag/ciphershed.html">CipherShed</a></p></a>      </li>
 
 
-      <li>
-<a href="http://5a43.github.io/macxia-yong-pelicansheng-cheng-github-pageske-yong-zhan-dian.html" rel="bookmark" title="Permalink to MAC下用Pelican生成Github Pages可用站点">MAC下用Pelican生成Github Pages可用站点</a>
-  <time datetime="2014-09-05T00:00:00" pubdate>五 05 九月 2014</time>
-<p class="tags">tags: <a href="http://5a43.github.io/tag/pelican.html">pelican</a><a href="http://5a43.github.io/tag/github-pages.html">GitHub Pages</a></p></a>      </li>
 
 
           </ol>
