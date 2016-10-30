@@ -38,7 +38,7 @@
 		<h1>MAC下用Pelican生成Github Pages可用站点</h1>
 		
 <div class="metadata">
-  <time datetime="2014-09-05T00:00:00" pubdate>五 05 九月 2014</time>
+  <time datetime="2014-09-05T00:00:00+08:00" pubdate>五 05 九月 2014</time>
     <address class="vcard author">
       by <a class="url fn" href="http://5a43.github.io/author/5a43.html">5a43</a>
     </address>
@@ -51,24 +51,24 @@
 </ul>
 <h1>简单的步骤</h1>
 <p>1.安装</p>
-<div class="highlight"><pre><span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">pelican</span><span class="p">,</span> <span class="n">markdown</span>
+<div class="highlight"><pre><span></span>sudo pip install pelican, markdown
 </pre></div>
 
 
 <p>2.设置可以按照<a href="http://docs.getpelican.com/en/3.4.0/index.html" title="pelican">pelican</a>文档里面写的quick start步骤，先生成一个站点。然后修改pelicanconf.py和publishconf.py，如果github的目录设置到output了，别忘了一定把DELETE_OUTPUT_DIRECTORY设置为False，否则.git在每次生成的时候都被删掉。各种设置可以参考<a href="http://docs.getpelican.com/en/latest/settings.html" title="pelican setting">这里</a></p>
 <p>3.参考<a href="http://docs.getpelican.com/en/3.4.0/index.html" title="pelican">pelican</a>了解怎么组织content目录中得metadata数据</p>
 <p>4.生成</p>
-<div class="highlight"><pre><span class="n">make</span> <span class="n">html</span>
+<div class="highlight"><pre><span></span>make html
 </pre></div>
 
 
 <p>5.发布</p>
-<div class="highlight"><pre><span class="n">make</span> <span class="n">publish</span>
+<div class="highlight"><pre><span></span>make publish
 </pre></div>
 
 
 <p>6.以后如果想全自动发布到github pages的话，可以修改一下Makefile的github publish部分，如下：</p>
-<div class="highlight"><pre><span class="n">cd</span> <span class="err">$</span><span class="p">(</span><span class="n">OUTPUTDIR</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">git</span> <span class="n">add</span> <span class="p">.</span> <span class="o">&amp;&amp;</span> <span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="err">&#39;</span><span class="n">commit</span><span class="err">&#39;</span> <span class="o">&amp;&amp;</span> <span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">master</span>
+<div class="highlight"><pre><span></span><span class="err">cd</span> <span class="k">$(</span><span class="nv">OUTPUTDIR</span><span class="k">)</span> <span class="err">&amp;&amp;</span> <span class="err">git</span> <span class="err">add</span> <span class="err">.</span> <span class="err">&amp;&amp;</span> <span class="err">git</span> <span class="err">commit</span> <span class="err">-m</span> <span class="s1">&#39;commit&#39;</span> <span class="err">&amp;&amp;</span> <span class="err">git</span> <span class="err">push</span> <span class="err">origin</span> <span class="err">master</span>
 </pre></div>
 
 
@@ -132,7 +132,7 @@
 
       <footer>
 		<p role="contentinfo">
-		  © 2013-2015 5a43 - Modified based on theme <a href="https://github.com/fle/pelican-simplegrey">pelican-simplegrey</a>
+		  © 2013-2016 5a43 - Modified based on theme <a href="https://github.com/fle/pelican-simplegrey">pelican-simplegrey</a>
     	</p>
 
 	  </footer>	

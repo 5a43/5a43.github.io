@@ -38,14 +38,14 @@
 		<h1>SSH Client 认证后卡死的问题</h1>
 		
 <div class="metadata">
-  <time datetime="2015-08-17T00:00:00" pubdate>一 17 八月 2015</time>
+  <time datetime="2015-08-17T00:00:00+08:00" pubdate>一 17 八月 2015</time>
     <address class="vcard author">
       by <a class="url fn" href="http://5a43.github.io/author/5a43.html">5a43</a>
     </address>
   in <a href="http://5a43.github.io/category/misc.html">Misc</a>
 <p class="tags">tagged <a href="http://5a43.github.io/tag/ssh.html">SSH</a>, <a href="http://5a43.github.io/tag/vmware.html">VMware</a></p></div>		
 		<p>最近刚刚换了一台Netgear WNDR4300的路由器，以前的DIR-617退役了。但是换完后发现一个问题。每当在我的Mac里面用SSH登陆我内网的香蕉派时，总是在输入完密码后无法登陆，一直卡死在那里。于是加-vvv看来一下详细的输出，最后几行大概是如下内容：</p>
-<div class="highlight"><pre><span class="n">debug3</span><span class="o">:</span> <span class="n">Ignored</span> <span class="n">env</span> <span class="n">_</span>
+<div class="highlight"><pre><span></span><span class="n">debug3</span><span class="o">:</span> <span class="n">Ignored</span> <span class="n">env</span> <span class="n">_</span>
 <span class="n">debug2</span><span class="o">:</span> <span class="n">channel</span> <span class="mi">0</span><span class="o">:</span> <span class="n">request</span> <span class="n">shell</span> <span class="n">confirm</span> <span class="mi">1</span>
 <span class="n">debug2</span><span class="o">:</span> <span class="n">callback</span> <span class="n">done</span>
 <span class="n">debug2</span><span class="o">:</span> <span class="n">channel</span> <span class="mi">0</span><span class="o">:</span> <span class="n">open</span> <span class="n">confirm</span> <span class="n">rwindow</span> <span class="mi">0</span> <span class="n">rmax</span> <span class="mi">32768</span>
@@ -112,7 +112,7 @@
 
       <footer>
 		<p role="contentinfo">
-		  © 2013-2015 5a43 - Modified based on theme <a href="https://github.com/fle/pelican-simplegrey">pelican-simplegrey</a>
+		  © 2013-2016 5a43 - Modified based on theme <a href="https://github.com/fle/pelican-simplegrey">pelican-simplegrey</a>
     	</p>
 
 	  </footer>	

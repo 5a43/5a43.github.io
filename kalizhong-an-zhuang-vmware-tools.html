@@ -38,19 +38,19 @@
 		<h1>Kali中安装VMware Tools</h1>
 		
 <div class="metadata">
-  <time datetime="2014-11-11T00:00:00" pubdate>二 11 十一月 2014</time>
+  <time datetime="2014-11-11T00:00:00+08:00" pubdate>二 11 十一月 2014</time>
     <address class="vcard author">
       by <a class="url fn" href="http://5a43.github.io/author/5a43.html">5a43</a>
     </address>
   in <a href="http://5a43.github.io/category/penetration.html">Penetration</a>
 <p class="tags">tagged <a href="http://5a43.github.io/tag/kali.html">Kali</a>, <a href="http://5a43.github.io/tag/vmware-tools.html">Vmware Tools</a></p></div>		
 		<p>首先编辑一下源的配置文件</p>
-<div class="highlight"><pre><span class="n">vim</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">apt</span><span class="o">/</span><span class="n">sources</span><span class="p">.</span><span class="n">list</span>
+<div class="highlight"><pre><span></span>vim /etc/apt/sources.list
 </pre></div>
 
 
 <p>默认的源应该就可以，如果没有可以用下面的</p>
-<div class="highlight"><pre><span class="c">#官方源</span>
+<div class="highlight"><pre><span></span><span class="c">#官方源</span>
 <span class="k">deb</span> <span class="s">http://http.kali.org/kali</span> <span class="kp">kali</span> <span class="kp">main</span> <span class="kp">non-free</span> <span class="kp">contrib</span>
 <span class="k">deb-src</span> <span class="s">http://http.kali.org/kali</span> <span class="kp">kali</span> <span class="kp">main</span> <span class="kp">non-free</span> <span class="kp">contrib</span>
 <span class="k">deb</span> <span class="s">http://security.kali.org/kali-security</span> <span class="kp">kali/updates</span> <span class="kp">main</span> <span class="kp">contrib</span> <span class="kp">non-free</span>
@@ -68,17 +68,17 @@
 
 
 <p>配置好源后，运行</p>
-<div class="highlight"><pre><span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
+<div class="highlight"><pre><span></span>apt-get update
 </pre></div>
 
 
 <p>安装linux内核头文件，同时把gcc make什么的一起装了</p>
-<div class="highlight"><pre><span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">gcc</span> <span class="n">make</span> <span class="n">linux</span><span class="o">-</span><span class="n">headers</span><span class="o">-</span><span class="err">$</span><span class="p">(</span><span class="n">uname</span> <span class="o">-</span><span class="n">r</span><span class="p">)</span>
+<div class="highlight"><pre><span></span>apt-get install gcc make linux-headers-$(uname -r)
 </pre></div>
 
 
 <p>安装完成后，做一个链接</p>
-<div class="highlight"><pre><span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">linux</span><span class="o">-</span><span class="n">headers</span><span class="o">-</span><span class="err">$</span><span class="p">(</span><span class="n">uname</span> <span class="o">-</span><span class="n">r</span><span class="p">)</span><span class="o">/</span><span class="n">include</span><span class="o">/</span><span class="n">generated</span><span class="o">/</span><span class="n">uapi</span><span class="o">/</span><span class="n">linux</span><span class="o">/</span><span class="n">version</span><span class="p">.</span><span class="n">h</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">linux</span><span class="o">-</span><span class="n">headers</span><span class="o">-</span><span class="err">$</span><span class="p">(</span><span class="n">uname</span> <span class="o">-</span><span class="n">r</span><span class="p">)</span><span class="o">/</span><span class="n">include</span><span class="o">/</span><span class="n">linux</span><span class="o">/</span>
+<div class="highlight"><pre><span></span>ln -s /usr/src/linux-headers-$(uname -r)/include/generated/uapi/linux/version.h /usr/src/linux-headers-$(uname -r)/include/linux/
 </pre></div>
 
 
@@ -142,7 +142,7 @@
 
       <footer>
 		<p role="contentinfo">
-		  © 2013-2015 5a43 - Modified based on theme <a href="https://github.com/fle/pelican-simplegrey">pelican-simplegrey</a>
+		  © 2013-2016 5a43 - Modified based on theme <a href="https://github.com/fle/pelican-simplegrey">pelican-simplegrey</a>
     	</p>
 
 	  </footer>	
